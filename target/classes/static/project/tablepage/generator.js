@@ -66,7 +66,7 @@ var tableInit = {
                 var checked_fix = [];
                 $.each(rows, function (i, row) {
                     checked_rows.push(row.table_name);
-                    if (!checked_fix.contains(row.table_name.split("_")[0])) {
+                    if (!checked_fix.contains(row.table_name.split("_")[0]+"_")) {
                         checked_fix.push(row.table_name.split("_")[0]+"_");
                     }
                 }).join(",");
@@ -77,10 +77,15 @@ var tableInit = {
                 $("#txt_tablename").empty();
                 var rows = $("#tb_generator").bootstrapTable('getSelections');
                 var checked_rows = [];
+                var checked_fix = [];
                 $.each(rows, function (i, row) {
                     checked_rows.push(row.table_name);
+                    if (!checked_fix.contains(row.table_name.split("_")[0]+"_")) {
+                        checked_fix.push(row.table_name.split("_")[0]+"_");
+                    }
                 }).join(",");
                 $("#txt_tablename").val(checked_rows);
+                $("#txt_fix_table").val(checked_fix);
             },
             columns: [{
                 checkbox: true,
@@ -153,6 +158,9 @@ var tableInit = {
             console.info("重新加载！");
             tableInit.reloadGrid();
         });
+        $("#gen_submit").on("click", function () {
+            model_submit();
+        });
     }
 };
 
@@ -174,7 +182,13 @@ function _delete(){
     //DeleteByIds(ids);
 }
 
+function model_submit(){
+    var formdata = $("#modal_gen_from").serialize();
+    console.info(formdata);
+}
 $(function () {
     tableInit.init();
-    $("#txt_tablename").select2();
+    $("#txt_select_tablename").select2({
+        width: "100%", //设置下拉框的宽度
+    });
 });

@@ -30,7 +30,7 @@
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="modal_gen_from">
                             <div class="form-group">
                                 <label for="txt_author">创建人</label>
                                 <input type="text" class="form-control" id="txt_author" placeholder="创建人">
@@ -38,6 +38,10 @@
                             <div class="form-group">
                                 <label for="txt_fix_table">表前缀</label>
                                 <input type="text" class="form-control" id="txt_fix_table" placeholder="表前缀">
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_select_tablename">表名</label>
+                                <select class="form-control" id="txt_select_tablename"></select>
                             </div>
                             <div class="form-group">
                                 <label for="txt_tablename">表名</label>
@@ -51,12 +55,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                            关闭
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                            提交执行
-                        </button>
+                        <button type="button" id="gen_submit" class="btn btn-primary">提交执行</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
