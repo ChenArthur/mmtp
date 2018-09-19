@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plus.mmtp.mapper.ProElementMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.plus.mmtp.entity.ProElement">
+        <id column="id" property="id" />
+        <result column="elementId" property="elementId" />
+        <result column="elementName" property="elementName" />
+        <result column="elementType" property="elementType" />
+        <result column="elementColor" property="elementColor" />
+        <result column="elementStyle" property="elementStyle" />
+        <result column="element" property="element" />
+        <result column="mark" property="mark" />
+        <result column="createTime" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, elementId, elementName, elementType, elementColor, elementStyle, element, mark, createTime
+    </sql>
+
+</mapper>
