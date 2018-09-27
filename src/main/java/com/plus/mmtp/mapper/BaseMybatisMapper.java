@@ -17,7 +17,7 @@ import java.util.Map;
 @Repository
 public interface BaseMybatisMapper {
 
-    List<Map<String, Object>> showTables(@Param("schema") String dataBaseName);
+    List<Map<String, Object>> showTables(@Param("params") Map<String, Object> params);
 
     List<Map<String, Object>> showTableInfo(@Param("params") Map<String, Object> params);
 

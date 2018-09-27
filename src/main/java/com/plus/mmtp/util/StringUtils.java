@@ -10,16 +10,13 @@ package com.plus.mmtp.util;
 public class StringUtils {
 
     public static boolean isEmptyAndNull(Object str){
-        if (str == null) {
-            return false;
-        }
-        if (str.equals("")) {
-            return false;
+        if (str == null || str.equals("")) {
+            return true;
         }
         if (str.toString().length() <= 0) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**

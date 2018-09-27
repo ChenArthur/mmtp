@@ -23,8 +23,8 @@ public class BaseMybatisServiceImpl implements BaseMybatisService {
     BaseMybatisMapper baseMybatisMapper;
 
     @Override
-    public List<Map<String, Object>> showTables(String dataBaseName){
-        return this.baseMybatisMapper.showTables(dataBaseName);
+    public List<Map<String, Object>> showTables(Map<String, Object> params){
+        return this.baseMybatisMapper.showTables(params);
     }
 
     @Override

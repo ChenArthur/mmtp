@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../static/bootstrap-3.3.7-dist/css/bootstrap.css" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}">
+</head>
+<body>
+<div class="container">
+    <div class="panel-body" style="padding-bottom:0px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">查询条件</div>
+            <div class="panel-body">
+                <form id="registerForm" action="/user/addorupdateuser" th:action="@{/user/addorupdateuser}" class="form-horizontal" method="post">
+                    <div class="form-group" style="margin-top:15px">
+                        <label class="control-label col-sm-1" for="username">用户名</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <label class="control-label col-sm-1" for="password">表名</label>
+                        <div class="col-sm-3">
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn-primary" id="register" value="提交" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../static/jQuery/jquery-3.3.1.min.js" th:src="@{/jQuery/jquery-3.3.1.min.js}"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../../static/bootstrap-3.3.7-dist/js/bootstrap.js" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+</body>
+</html>

@@ -30,8 +30,8 @@ public class MysqlGenerator {
 
     public static void main(String[] args) {
         String authorName="ch";     //作者
-        String[] tables = {"t_pro_element","t_pro_loginuser","t_pro_menu","t_pro_operation","t_pro_permission"};                  //table名字
-        String[] prefix = {"t_"};                     //table前缀
+        String[] tables = {"sys_permission","sys_permission_role","sys_role","sys_role_user","sys_user"};                  //table名字
+        String[] prefix = {"sys_"};                     //table前缀
 
         Map<String, Object> params = new HashMap<>();
         params.put("author", authorName);

@@ -87,34 +87,17 @@ var tableInit = {
                 $("#txt_tablename").val(checked_rows);
                 $("#txt_fix_table").val(checked_fix);
             },
-            columns: [{
-                checkbox: true,
-                visible: true                  //是否显示复选框
-            }, {
-                field: 'table_schema',
-                visible: false,
-                title: '数据库名'
-            }, {
-                field: 'table_name',
-                sortable:true,
-                title: '表名'
-            }, {
-                field: 'table_type',
-                title: '表类型'
-            }, {
-                field: 'table_rows',
-                title: '表数据行数'
-            }, {
-                field: 'engine',
-                visible: false,
-                title: '数据检索引擎'
-            }]
+            columns: [
+                {checkbox: true, visible: true},                  //是否显示复选框
+                {field: 'number',title: '序号', formatter: showNumber},
+                {field: 'table_schema', visible: false, title: '数据库名'},
+                {field: 'table_name', sortable:true, title: '表名'},
+                {field: 'table_type', title: '表类型'},
+                {field: 'table_comment', title: '表描述'},
+                {field: 'table_rows', visible: false, title: '表数据行数'},
+                {field: 'engine', visible: false, title: '数据检索引擎'}
+            ]
         });
-        /*$("#tb_generator").bootstrapTable('getPager').pagination({
-            displayMsg : '当前显示 {from} - {to} 条记录   共 {total} 条记录',
-            layout : [ 'first', 'prev', 'links', 'next', 'last' ],// manual
-            links : 10
-        });*/
     },
     queryParams : function (params) {
         //console.info(params);
@@ -164,6 +147,10 @@ var tableInit = {
     }
 };
 
+function showNumber(value, row, index) {
+    return index+1;
+}
+
 function _add(){
     alert("添加！");
 }
@@ -186,9 +173,15 @@ function model_submit(){
     var formdata = $("#modal_gen_from").serialize();
     console.info(formdata);
 }
+
 $(function () {
     tableInit.init();
     $("#txt_select_tablename").select2({
         width: "100%", //设置下拉框的宽度
+    });
+
+    $("#btn_date").on("click", function () {
+        var time= $.ajax({async: false}).getResponseHeader("Date");
+        $("#txt_date").val(dateTimeFormate(time));
     });
 });

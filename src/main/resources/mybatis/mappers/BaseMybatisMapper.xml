@@ -3,12 +3,15 @@
 <mapper namespace="com.plus.mmtp.mapper.BaseMybatisMapper">
 
     <!--查询库中项目创建的表集合-->
-    <select id="showTables" parameterType="java.lang.String" resultType="java.util.Map">
-        select table_schema,table_name,table_type,engine,table_rows from information_schema.tables
+    <select id="showTables" parameterType="java.util.Map" resultType="java.util.Map">
+        select table_schema,table_name,table_type,engine,table_rows,table_comment from information_schema.tables
         <where>
             table_type='BASE TABLE'
-            <if test="schema != null and schema != ''">
-                and table_schema=#{schema}
+            <if test="params.schema != null and params.schema != ''">
+                and table_schema=#{params.schema}
+            </if>
+            <if test="params.tableName != null and params.tableName != ''">
+                and table_name=#{params.tableName}
             </if>
         </where>
     </select>

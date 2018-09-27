@@ -24,7 +24,7 @@ public class GeneratorController {
         return "tablepage/generator";
     }
 
-    @GetMapping("/")
+    @GetMapping("/execute")
     public String execute(Map<String, Object> params){
         String str = "";
         if (StringUtils.isEmptyAndNull(params.get("author"))) {

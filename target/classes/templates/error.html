@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}">
+</head>
+<body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
+<h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+<p th:utext="${errorMsg}">Error java.lang.NullPointerException</p>
+<a href="index.html" th:href="@{/index.html}">返回首页</a>
+
+
+<script src="../static/jQuery/jquery-3.3.1.min.js" th:src="@{/jQuery/jquery-3.3.1.min.js}"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.js" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+</body>
+</html>

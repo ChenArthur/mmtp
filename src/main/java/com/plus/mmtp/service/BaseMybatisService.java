@@ -11,7 +11,7 @@ import java.util.Map;
  * @Version: 1.0
  **/
 public interface BaseMybatisService {
-    List<Map<String, Object>> showTables(String dataBaseName);
+    List<Map<String, Object>> showTables(Map<String, Object> params);
 
     List<Map<String, Object>> showTableInfo(Map<String, Object> params);
 

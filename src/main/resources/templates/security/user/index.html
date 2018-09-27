@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Hello Spring Security</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}">
+</head>
+<body>
+<!--<div th:substituteby="home/index::logout"></div>-->
+<h1>This is a secured page!</h1>
+<p><a href="/home/index" th:href="@{/home/index}">Back to home page</a></p>
+
+</body>
+</html>
